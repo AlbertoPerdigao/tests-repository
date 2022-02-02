@@ -15,11 +15,7 @@ venv/Scripts/activate
 source venv/Scripts/activate
 ```
 
-**Environment variables**
+**Execution File**
 ```
-(Win)
-SET FLASK_APP=my_app.py
-
-(Linux)
-export FLASK_APP=my_app.py
+python my_app.py
 ```
