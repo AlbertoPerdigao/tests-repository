@@ -14,6 +14,7 @@ class User(Resource):
         help="Every user needs a password."
     ) 
 
+    @classmethod
     def get(cls, name):
         try:
             user = UserModel.find_by_name(name)
@@ -24,7 +25,8 @@ class User(Resource):
             return user.json()
         return {'message': 'User not found'}, 404
     
-    def post(self, name):        
+    @classmethod
+    def post(cls, name):        
         if UserModel.find_by_name(name):
             return {'message': "An user with name '{}' already exists.".format(name)}, 400
 
@@ -40,7 +42,8 @@ class User(Resource):
 
 
 class UserList(Resource):
-    def get(self):
+    @classmethod
+    def get(cls):
         users = [user.json() for user in UserModel.find_all()]        
         return {'users': users}, 200
         

@@ -9,6 +9,7 @@ class Address(Resource):
         help="This field cannot be left blank!"
     )
 
+    @classmethod
     def post(cls, user_id):
         data = Address.parser.parse_args()        
         address = AddressModel(email=data['email'], user_id=user_id)
@@ -22,6 +23,7 @@ class Address(Resource):
 
 
 class AddressList(Resource):
-    def get(self):
+    @classmethod
+    def get(cls):
         addresses = [address.json() for address in AddressModel.find_all()]        
         return {'addresses': addresses}, 200
