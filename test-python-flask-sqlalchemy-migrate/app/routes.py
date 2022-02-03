@@ -1,4 +1,3 @@
-from email.headerregistry import Address
 from app import api
 from resources.user import User, UserList
 from resources.address import Address, AddressList
