@@ -19,3 +19,10 @@ source venv/Scripts/activate
 ```
 python my_app.py
 ```
+
+**Flask-Migrate**
+```
+flask db init
+flask db migrate -m "Initial migration."
+flask db upgrade
+```
