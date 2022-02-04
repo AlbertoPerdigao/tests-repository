@@ -20,11 +20,11 @@ class UserModel(db.Model):
         db.session.commit()
 
     @classmethod
-    def find_all(cls) -> List["UserModel"]:
-        return cls.query.all()
-
-    @classmethod
     def find_by_name(cls, name: str) -> "UserModel":
         return cls.query.filter_by(
             name=name
         ).first()  # select * from users where name = name limit 1
+
+    @classmethod
+    def find_all(cls) -> List["UserModel"]:
+        return cls.query.all()
