@@ -18,5 +18,5 @@ api = Api(app)
 # app.secret_key = 'secret_key'
 
 from app import routes, error_handler
-from models import user, address 
+from models import user, address
 from schemas import user, address
